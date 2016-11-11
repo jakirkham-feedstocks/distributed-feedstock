@@ -1,13 +1,14 @@
-{% set version = "1.14.1" %}
+{% set sha = "40c1dc9d7059e6202bd3fcb6765fda230dac4497" %}
+{% set version = "1.14.2.dev0+" + sha[:7] %}
 
 package:
   name: distributed
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   fn: distributed-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz
-  sha256: 1ac4deab7240e16d708db45ede3fd39bad1db0cd3c8b796a89a0fe681abaf4b6
+  url: https://github.com/dask/distributed/archive/{{ sha }}.tar.gz
+  sha256: 6e988e395a38c9f1839264b6ea3861cd4396c541f29ba4c60d2c9a1ca06de77a
 
 build:
   number: 0
