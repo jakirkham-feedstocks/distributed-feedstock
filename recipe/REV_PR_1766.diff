@@ -1,0 +1,37 @@
+diff --git distributed/stealing.py distributed/stealing.py
+index 0c2b7fb6..1197ce29 100644
+--- distributed/stealing.py
++++ distributed/stealing.py
+@@ -313,7 +313,7 @@ class WorkStealing(SchedulerPlugin):
+                     for ts in list(stealable):
+                         if (ts not in self.key_stealable or
+                                 ts.processing_on is not sat):
+-                            stealable.discard(ts)
++                            stealable.remove(ts)
+                             continue
+                         i += 1
+                         if not idle:
+@@ -322,7 +322,7 @@ class WorkStealing(SchedulerPlugin):
+ 
+                         duration = sat.processing.get(ts)
+                         if duration is None:
+-                            stealable.discard(ts)
++                            stealable.remove(ts)
+                             continue
+ 
+                         maybe_move_task(level, ts, sat, idl,
+@@ -334,12 +334,12 @@ class WorkStealing(SchedulerPlugin):
+                         if not idle:
+                             break
+                         if ts not in self.key_stealable:
+-                            stealable.discard(ts)
++                            stealable.remove(ts)
+                             continue
+ 
+                         sat = ts.processing_on
+                         if sat is None:
+-                            stealable.discard(ts)
++                            stealable.remove(ts)
+                             continue
+                         if combined_occupancy(sat) < 0.2:
+                             continue
