@@ -15,7 +15,7 @@ build:
     - dask-ssh=distributed.cli.dask_ssh:go
     - dask-worker=distributed.cli.dask_worker:go
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  noarch: python
+  skip: True  # [py<36]
 
 requirements:
   host:
