@@ -1,12 +1,12 @@
-{% set version = "2.11.0" %}
+{% set version = "2.12.0" %}
 
 package:
   name: distributed
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz
-  sha256: 8252e9e6387db3862c9b56b5e028b5a592fa82dcbe100bffc34be58ccd74e01c
+  sha256: 5805bac7bf15a00f2cceb55babc2456bb148f8b01376a14984d32a1cd7ac0669
 
 build:
   number: 0
@@ -14,8 +14,8 @@ build:
     - dask-scheduler=distributed.cli.dask_scheduler:go
     - dask-ssh=distributed.cli.dask_ssh:go
     - dask-worker=distributed.cli.dask_worker:go
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [py<36]
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  skip: true  # [py<36]
 
 requirements:
   host:
@@ -57,7 +57,7 @@ about:
   license: BSD 3-Clause
   license_file: LICENSE.txt
   license_family: BSD
-  summary: 'Distributed computing with Dask'
+  summary: Distributed computing with Dask
   description: |
     Distributed is a lightweight library for distributed computing in Python.
     It extends both the concurrent.futures and dask APIs to moderate sized
