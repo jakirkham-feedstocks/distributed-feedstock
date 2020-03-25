@@ -3,7 +3,7 @@ About distributed
 
 Home: http://distributed.readthedocs.io/en/latest/
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
