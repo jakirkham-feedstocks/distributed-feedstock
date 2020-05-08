@@ -26,6 +26,7 @@ requirements:
     - python
     - click >=6.6
     - cloudpickle >=0.2.2
+    - contextvars  # [py==36]
     - cytoolz >=0.8.2
     - dask-core >=2.9.0
     - msgpack-python >=0.6.0
