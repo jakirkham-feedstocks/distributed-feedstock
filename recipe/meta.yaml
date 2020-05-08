@@ -1,4 +1,4 @@
-{% set version = "2.15.2" %}
+{% set version = "2.16.0" %}
 
 package:
   name: distributed
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz
-  sha256: 472f833cd819b1e964734bfe5f211e3ef8dd41bf288b2b7a4bdb40596f4c4d34
+  sha256: 28eb0faea4783f424956b073afa2677b9a13a0cc83ffcc1b1d424fabd98f17e9
 
 build:
   number: 0
@@ -26,6 +26,7 @@ requirements:
     - python
     - click >=6.6
     - cloudpickle >=0.2.2
+    - contextvars  # [py==36]
     - cytoolz >=0.8.2
     - dask-core >=2.9.0
     - msgpack-python >=0.6.0
