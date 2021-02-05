@@ -31,7 +31,7 @@ requirements:
     - cloudpickle >=1.5.0
     - contextvars  # [py==36]
     - cytoolz >=0.8.2
-    - dask-core >=2020.12.0
+    - dask-core >=2021.02.0
     - msgpack-python >=0.6.0
     - psutil >=5.0
     - pyyaml
