@@ -22,14 +22,13 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.7
     - pip
 
   run:
-    - python
+    - python >=3.7
     - click >=6.6
     - cloudpickle >=1.5.0
-    - contextvars  # [py==36]
     - cytoolz >=0.8.2
     - dask-core >=2021.03.0
     - msgpack-python >=0.6.0
