@@ -27,7 +27,7 @@ requirements:
 
   run:
     - python
-    - click >=6.6
+    - click >=6.6,<8.0.0
     - cloudpickle >=1.5.0
     - cytoolz >=0.8.2
     - dask-core >=2021.03.0
